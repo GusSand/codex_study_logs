@@ -103,6 +103,6 @@ rm $user_results_file_tmp user_temp2.tmp
 
 # rm user_results_file_tmp
 
-echo -e "${MAG} Fuzzing Results per user in fuzzer_results_users.csv ... ${RESET}"
+echo -e "${MAG} Fuzzing Results per user in $user_results_file ... ${RESET}"
 
 echo "End time: $(date)"

@@ -88,7 +88,6 @@ def get_dict_from_file(file_name):
 
     return dict
 
-
 def get_lines_of_code(function_name, study):
     """
     Get the lines of code for both types of functions:
@@ -102,15 +101,17 @@ def get_lines_of_code(function_name, study):
     success_dict = defaultdict()
     passed_tests_dict = defaultdict()
     
-    if study == 'Inactive':
+    if study == 'Deactive':
         D(f'Study is inactive.')
         success_file = f'../../all_ok_functs_inactive_loc.csv'
         passed_tests_file = f'../../all_passed_tests_inactive_loc.csv'
-    else:
+    elif study == 'Active':
         D(f'Study is Active.')
         success_file = f'../../all_ok_functs_active_loc.csv'
         passed_tests_file = f'../../all_passed_tests_active_loc.csv'
-
+    else:
+        assert False, f"{study} Houston we have a problem: is not Active or Deactive"
+    
     success_dict = get_dict_from_file(success_file)
     passed_tests_dict = get_dict_from_file(passed_tests_file)
 
